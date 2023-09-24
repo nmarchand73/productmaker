@@ -226,7 +226,7 @@ def run():
         with st.container():
             keywords = st.text_input("Enter your keywords to generate Unique Value Propositions", "non linear editor, web, mobile tv, streaming, live, broadcaster, newsroom, motion graphic, ai")
             nb_ideas = st.text_input("Enter number of Unique Value Propositions to generate", "3")
-            if st.button('Generate Unique Value Propositions'):
+            if st.button('Generate Unique Value Propositions', type="primary"):
                     with st.spinner('Wait for it...'):
                         result = get_biz_valueproposal(int(nb_ideas), keywords, language = language_selected)
                         st.markdown(result)
