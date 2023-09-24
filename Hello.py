@@ -217,10 +217,12 @@ def run():
     company = st.text_input("Company","ed tech platform")
     business_idea = st.text_area("Product/Service unique value proposition","EddyTechy helps students of any age learn how to code & start taking up freelance projects")
     market = st.text_input("Market","French students in Univerity or Grande Ecole")
-    language_selected = st.radio(
-        "Which language ? 👉",
-        options=["English", "French"],
-    )
+    with st.expander("Settings"):
+        os.environ["OPENAI_API_KEY"] = st.text_input("OpenAI API Key","")
+        language_selected = st.radio(
+            "Language",
+            options=["English", "French"],
+        )
     with st.expander("Unique Value Propositions generator"):
         with st.container():
             keywords = st.text_input("Enter your keywords to generate Unique Value Propositions", "non linear editor, web, mobile tv, streaming, live, broadcaster, newsroom, motion graphic, ai")
