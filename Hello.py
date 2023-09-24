@@ -115,10 +115,6 @@ queries_product_growth = [
     "Product growth. Making Excuses: Give me a bundle of 10hilarious excuses that I could rotate in my emails to stakeholders explaining why a certain committed feature was delayed.",
 ]
 
-bot = App()
-bot.online = True # enable internet access for the bot
-
-
 def get_prompt(company, market, product_idea, language = "English"):
   # Use config params from https://docs.embedchain.ai/advanced/query_configuration
   string_full = """
@@ -219,6 +215,8 @@ def run():
     market = st.text_input("Market","French students in Univerity or Grande Ecole")
     with st.expander("Settings"):
         os.environ["OPENAI_API_KEY"] = st.text_input("OpenAI API Key","")
+        bot = App()
+        bot.online = True # enable internet access for the bot
         language_selected = st.radio(
             "Language",
             options=["English", "French"],
