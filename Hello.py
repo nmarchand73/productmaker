@@ -194,9 +194,9 @@ def get_biz_valueproposal(number_of_ideas, keywords, language = "English"):
 
 
 def display_biz_result(company:str,market:str, business_idea:str, rubrique:str, query_list, language:str):
-    for query in query_list:
-        st.markdown(" - " + query)
-    st.markdown("")
+    #for query in query_list:
+    #    st.markdown(" - " + query)
+    #st.markdown("")
     if st.button('Generate ' + rubrique, type="primary"):
         with st.container():
             st.markdown("# " + rubrique)
