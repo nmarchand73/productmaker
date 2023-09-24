@@ -14,6 +14,10 @@ st.set_page_config(layout="wide")
 MODEL = "gpt-4"
 LANGUAGE = "English"
 
+os.environ["OPENAI_API_KEY"] = st.text_input("OpenAI API Key","")
+bot = App()
+bot.online = True # enable internet access for the bot
+
 #MODEL = "gpt-4-32k"
 #MODEL = "gpt-3.5-turbo"
 #MODEL = "gpt-3.5-turbo-16k"
@@ -214,9 +218,6 @@ def run():
     business_idea = st.text_area("Product/Service unique value proposition","EddyTechy helps students of any age learn how to code & start taking up freelance projects")
     market = st.text_input("Market","French students in Univerity or Grande Ecole")
     with st.expander("Settings"):
-        os.environ["OPENAI_API_KEY"] = st.text_input("OpenAI API Key","")
-        bot = App()
-        bot.online = True # enable internet access for the bot
         language_selected = st.radio(
             "Language",
             options=["English", "French"],
